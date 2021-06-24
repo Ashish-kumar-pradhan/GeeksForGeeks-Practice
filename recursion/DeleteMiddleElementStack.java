@@ -16,6 +16,21 @@ public class DeleteMiddleElementStack {
             s.push(help.pop());
         }   
     } 
+	
+	private static void delete(Stack<Integer> S , int k){
+		if(S.size() == k) {
+			S.pop();
+			return;
+		}
+		int topElem = S.pop();
+		delete(S , k);
+		S.push(topElem);
+	}
+    public void deleteMidR(Stack<Integer>s,int sizeOfStack){
+    	
+        int k = (sizeOfStack + 1)/2;
+        delete(s , k);
+    } 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
