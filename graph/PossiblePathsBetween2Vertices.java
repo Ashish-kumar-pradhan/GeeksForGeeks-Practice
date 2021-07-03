@@ -33,9 +33,5 @@ public static void countPathDFS(ArrayList<ArrayList<Integer>> adj , int s, int d
         
     }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
