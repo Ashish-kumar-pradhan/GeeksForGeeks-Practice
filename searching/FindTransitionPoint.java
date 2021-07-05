@@ -1,4 +1,4 @@
-package arrays;
+package searching;
 
 public class FindTransitionPoint {
 	
