@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class MergeWithoutExtraSpace {
 	
 	static void swap(long arr1[] , long arr2[] , int nI , int mI){
@@ -35,6 +37,54 @@ public class MergeWithoutExtraSpace {
                 }
             }
         }
+    }
+    
+    public void merge2(int arr1[], int arr2[], int n, int m) {
+        // code here
+          for (int i = 0 ; i < Math.min(arr1.length, arr2.length) ; i++) {
+			  if(arr1[arr1.length-1 -i] > arr2[i]){
+				  int temp = arr1[arr1.length-1 -i];
+				  arr1[arr1.length-1 -i] = arr2[i];
+				  arr2[i] = temp;
+			  }
+			  else {
+				  break;
+			  }
+		  }
+		  Arrays.sort(arr1);
+		  Arrays.sort(arr2);
+    }
+    
+    public static void merge3(long arr1[], long arr2[], int n, int m) // O(N) O(N)
+    {
+        int l = m + n;
+       long ans[] = new long[l];
+       
+       int i = 0; 
+       int j = 0;
+       int k = 0;
+       
+       while(i < n || j < m){
+           if(i >= n) ans[k++] = arr2[j++];
+           else if(j >= m) ans[k++] = arr1[i++];
+           else {
+               if(arr1[i] < arr2[j]){
+                   ans[k++] = arr1[i++]; 
+               }
+               else {
+                   ans[k++] = arr2[j++]; 
+               }
+           }
+       }
+       
+       for(int e = 0 ; e < n ; e++){
+           arr1[e] = ans[e];
+       }
+       
+       for(int e = n ; e < l ; e++){
+           arr2[e-n] = ans[e];
+       }
+       
     }
 
 	public static void main(String[] args) {
