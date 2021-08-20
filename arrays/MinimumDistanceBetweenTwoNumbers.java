@@ -3,7 +3,7 @@ package arrays;
 public class MinimumDistanceBetweenTwoNumbers {
 	
 	int minDist(int a[], int n, int x, int y) {
-        // code here
+        
         int xi = 0;
         int yi = 0;
         int min = Integer.MAX_VALUE;
@@ -32,7 +32,7 @@ public class MinimumDistanceBetweenTwoNumbers {
             }
         }
         
-        if(min == Integer.MAX_VALUE){
+        if(min  == Integer.MAX_VALUE){
             return -1;
         }
         return min;
