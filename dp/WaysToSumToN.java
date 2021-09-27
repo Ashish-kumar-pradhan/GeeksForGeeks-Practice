@@ -11,7 +11,7 @@ public class WaysToSumToN {
            int sum = 0;
            for(int j = 0 ; j < m ; j++){
                 if(i >= arr[j]){
-                    sum = (sum + dp[i-arr[j]])%1000000007;
+                     sum = (sum + dp[i-arr[j]])%1000000007;
                 }
            }
            dp[i] = sum;
